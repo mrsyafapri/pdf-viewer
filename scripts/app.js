@@ -26,7 +26,7 @@ function resetCurrentPDF() {
 }
 
 search.addEventListener("search", () => {
-	const searchValue = document.getElementById("search").value;
+	const searchValue = search.value;
 	currentPDF.file.getPage(currentPDF.currentPage).then((page) => {
 		page.getTextContent().then((textContent) => {
 			const textItems = textContent.items;
