@@ -34,7 +34,21 @@ search.addEventListener("search", () => {
 			const regex = new RegExp(searchValue, "gi");
 			const matches = text.match(regex);
 			if (matches) {
+				console.log(matches);
 				alert(`Ditemukan ${matches.length} kemunculan kata '${searchValue}'`);
+				textItems.forEach((item) => {
+					const itemText = item.str;
+					if (itemText.match(regex)) {
+						const itemWidth = item.width * currentPDF.zoom;
+						const itemHeight = item.height * currentPDF.zoom;
+						const itemX = item.transform[3] * currentPDF.zoom;
+						const itemY = item.transform[5] * currentPDF.zoom;
+						const canvas = document.querySelector(".pdf-viewer");
+						const context = canvas.getContext("2d");
+						context.fillStyle = "rgba(255, 255, 0, 0.5)";
+						context.fillRect(itemX, itemY, itemWidth, itemHeight);
+					}
+				});
 			} else {
 				alert("Tidak ditemukan");
 			}

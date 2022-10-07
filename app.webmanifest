@@ -1,6 +1,6 @@
 {
-    "id": "pdf-viewer",
     "start_url": "/",
+    "scope": ".",
     "name": "PDF Viewer App",
     "short_name": "PDF Viewer",
     "description": "View PDF files offline",
