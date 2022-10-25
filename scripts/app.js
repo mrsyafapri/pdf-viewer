@@ -41,11 +41,11 @@ search.addEventListener("search", () => {
 					if (itemText.match(regex)) {
 						const itemWidth = item.width * currentPDF.zoom;
 						const itemHeight = item.height * currentPDF.zoom;
-						const itemX = item.transform[3] * currentPDF.zoom;
-						const itemY = item.transform[5] * currentPDF.zoom;
+						const itemX = item.transform[item.transform.length - 2] * currentPDF.zoom;
+						const itemY = item.transform[item.transform.length - 1] * currentPDF.zoom;
 						const canvas = document.querySelector(".pdf-viewer");
 						const context = canvas.getContext("2d");
-						context.fillStyle = "rgba(255, 255, 0, 0.5)";
+						context.fillStyle = "rgba(255, 255, 0, 0.8)";
 						context.fillRect(itemX, itemY, itemWidth, itemHeight);
 					}
 				});
