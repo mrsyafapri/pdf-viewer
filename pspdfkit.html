@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="application/wasm">
     <title>PDF Viewer</title>
+    <link rel="shortcut icon" href="icons/favicon.ico" type="image/x-icon">
     <style>
         html,
         body {
@@ -28,9 +30,9 @@
 </head>
 
 <body>
-    <input type="file" accept="application/pdf" id="input-pdf" />
+    <input type="file" id="input-pdf" accept="application/pdf">
     <div id="pdfContainer"></div>
-    <script src="https://cdn.jsdelivr.net/npm/pspdfkit@2022.4.3/dist/pspdfkit.min.js" type="text/javascript"></script>
+    <script src="dist/pspdfkit.js" type="text/javascript"></script>
     <script type="text/javascript">
         const input = document.getElementById("input-pdf");
         document.addEventListener("change", function (event) {
